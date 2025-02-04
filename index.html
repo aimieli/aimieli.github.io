@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>My little app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.76.0/build/style.css"/>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="module">
+    import {mount} from "https://cdn.jsdelivr.net/npm/@stlite/browser@0.76.0/build/stlite.js";
+
+    mount(
+        {
+            requirements: ["plotly"],
+            entrypoint: "hello.py", // The target file of the `streamlit run` command
+            files: {
+                "hello.py": {
+                    url: "hello.py",
+                },
+            },
+        },
+        document.getElementById("root")
+    );
+</script>
+</body>
+
+</html>
